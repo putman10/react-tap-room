@@ -1,10 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../public/kombucha-logo.png'
+
 
 function Header(){
   return (
     <div>
-      <h1>Help Queue</h1>
+      <img src={logo} alt="Kombuch on Tap Logo"/>
+      <h1>Kombucha On Tap</h1>
       <Link to="/">Home</Link> | <Link to="/newticket">Create Ticket</Link>
     </div>
   );
