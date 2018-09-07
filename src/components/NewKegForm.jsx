@@ -23,24 +23,29 @@ function NewKegForm(){
   let buttonStyle = {
     display: 'block',
     margin: '0 auto'
-  }
+  };
   return (
     <div style={headerDivStyles}>
       <form style={formStyles}>
         <h1>Add a New Keg Form:</h1>
         <input style={inputStyles}
           type='text'
-          id='names'
-          placeholder='Pair Names'/>
+          id='name'
+          placeholder='Name'/>
         <input style={inputStyles}
           type='text'
-          id='location'
-          placeholder='Location'/>
-        <textarea style={inputStyles}
-          id='issue'
-          placeholder='Describe your issue.'/>
+          id='brand'
+          placeholder='Brand'/>
+        <input style={inputStyles}
+            type='text'
+            id='price'
+            placeholder='Price per Keg'/>
+        <input style={inputStyles}
+          type='text'
+          id='alcoholContent'
+          placeholder='Alcohol Content'/>
         <button className="submit-button" style={buttonStyle} type='submit'>Add New Keg to Inventory</button>
-          <style jsx>{`
+        <style jsx>{`
         .submit-button{
           margin-right: 10px;
           padding: 10px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../public/images/kombucha-logo.png';
-import './styles/Header.css'
+import './styles/Header.css';
 
 function Header(){
   let headerDivStyles = {
@@ -31,7 +31,7 @@ function Header(){
         <div className="menu-links" >
           <Link to="/edit-keg" style={linkStyles}>Edit Existing Keg</Link>
         </div>
-          <style jsx>{`
+        <style jsx>{`
         .menu-links{
           margin-right: 10px;
           padding: 10px;
