@@ -1,35 +1,61 @@
+const webpack = require('webpack');
+const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-constconst webpack  webpack ==  requirerequire(('webpack''webpack'););
- constconst  {{ resolve  resolve }}  ==  requirerequire(('path''path'););
+module.exports = {
 
-  modulemodule..exports exports ==  {{
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    resolve(__dirname, "src", "index.jsx")
+  ],
 
-  entry    entry::  [[
-    resolve     resolve((__dirname__dirname,,  "src""src"))  ++  "/index.jsx""/index.jsx"
-     ],],
+  output: {
+    filename: 'app.bundle.js',
+    path: resolve(__dirname, 'build'),
+    publicPath: '/'
+  },
 
-  output    output::  {{
-    filename     filename::  'app.bundle.js''app.bundle.js',,
-    path     path:: resolve resolve((__dirname__dirname,,  'build''build'),),
-     },},
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
 
-  resolve    resolve::  {{
-    extensions     extensions::  [[  '.js''.js',,  '.jsx''.jsx'  ]]
-     },},
+  devtool: '#source-map',
 
-      modulemodule::  {{
-    rules     rules::  [[
-             {{
-        test         test::  /\.jsx?$//\.jsx?$/,,
-        loader         loader::  "babel-loader""babel-loader",,
-        exclude         exclude::  /node_modules//node_modules/,,
-        options         options::  {{
-          presets           preset : [
-            "es2015",
-            "react"
+  devServer: {
+    hot: true,
+    contentBase: resolve(__dirname, 'build'),
+    publicPath: '/'
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+        options: {
+          presets: [
+            ["es2015", {"modules": false}],
+            "react",
+          ],
+          plugins: [
+            "react-hot-loader/babel"
           ]
         }
-      },
+      }
     ],
-  }
+  },
+
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new HtmlWebpackPlugin({
+      template:'template.ejs',
+      appMountId: 'react-app-root',
+      title: 'React Help Queue',
+      filename: resolve(__dirname, "build", "index.html"),
+    }),
+  ]
 };
