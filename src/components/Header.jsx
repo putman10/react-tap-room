@@ -28,13 +28,16 @@ function Header(){
         <div className="menu-links" >
           <Link to="/new-keg" style={linkStyles}>Add New Keg</Link>
         </div>
+        <div className="menu-links" >
+          <Link to="/edit-keg" style={linkStyles}>Edit Existing Keg</Link>
+        </div>
           <style jsx>{`
         .menu-links{
           margin-right: 10px;
           padding: 10px;
           background: #ffca28;
           border-radius: 4px;
-          max-width: 150px;
+          max-width: 180px;
           display: inline-block;
         }
         .menu-links:hover{
