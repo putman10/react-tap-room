@@ -9,8 +9,7 @@ function Keg(props){
     background: 'white',
     padding: '10px',
     border: '1px solid black',
-    borderTop: '0',
-    borderBottom: '0'
+    borderTop: '0'
   };
   let h3Style = {
     marginTop: '0px',
@@ -24,7 +23,6 @@ function Keg(props){
       <p><em>${props.price}</em></p>
       <p><b>Alcohol Content:</b> {props.alcoholContent}%</p>
       <p><b>Pints Left in Keg:</b> {props.pintsLeft}</p>
-      <hr/>
     </div>
   );
 }

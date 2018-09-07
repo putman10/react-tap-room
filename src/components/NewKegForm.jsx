@@ -6,10 +6,9 @@ function NewKegForm(){
     maxWidth: '1200px',
     margin: '0 auto',
     background: 'white',
-    padding: '10px',
+    padding: '10px 0 30px 0',
     border: '1px solid black',
-    borderTop: '0',
-    borderBottom: '0'
+    borderTop: '0'
   };
   let inputStyles = {
     width: '90%',
@@ -40,7 +39,21 @@ function NewKegForm(){
         <textarea style={inputStyles}
           id='issue'
           placeholder='Describe your issue.'/>
-        <button style={buttonStyle} type='submit'>Help!</button>
+        <button className="submit-button" style={buttonStyle} type='submit'>Add New Keg to Inventory</button>
+          <style jsx>{`
+        .submit-button{
+          margin-right: 10px;
+          padding: 10px;
+          background: #ffca28;
+          border-radius: 4px;
+          max-width: 150px;
+          display: inline-block;
+        }
+        .submit-button:hover{
+          background: black;
+          color:white;
+        }
+    `}</style>
       </form>
     </div>
   );

@@ -16,17 +16,34 @@ function Header(){
   let linkStyles = {
     color:'black',
     textDecoration: 'none',
-    marginRight: '10px',
-    padding: '10px',
-    background: '#ffca28',
-    borderRadius: '4px'
+    textTransform: 'uppercase'
   };
   return (
     <div style={headerDivStyles}>
       <img style={logoStyles} src={image} alt="Kombuch on Tap Logo"/>
       <div>
-        <Link style={linkStyles} to="/">Home</Link>
-        <Link style={linkStyles} to="/new-keg">Add New Keg</Link>
+        <div className="menu-links">
+          <Link to="/" style={linkStyles}>Home</Link>
+        </div>
+        <div className="menu-links" >
+          <Link to="/new-keg" style={linkStyles}>Add New Keg</Link>
+        </div>
+          <style jsx>{`
+        .menu-links{
+          margin-right: 10px;
+          padding: 10px;
+          background: #ffca28;
+          border-radius: 4px;
+          max-width: 150px;
+          display: inline-block;
+        }
+        .menu-links:hover{
+          background: white;
+        }
+        .menu-links:last-of-type{
+          margin-right: 0px;
+        }
+    `}</style>
       </div>
     </div>
   );
