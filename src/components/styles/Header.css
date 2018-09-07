@@ -1,0 +1,27 @@
+.headerDivStyles {
+  text-align: center;
+  background: black;
+  padding: 20px
+}
+
+.logoStyles{
+  width: 200px;
+  margin-bottom: 20px
+}
+
+.linkStyles{
+  color:black;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 4px
+}
+
+.linkStyles:hover{
+  background: #ffca28;
+}
+
+.linkStyles:last-of-type {
+  margin-right:0px;
+}

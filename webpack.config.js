@@ -41,6 +41,13 @@ module.exports = {
           configFile: "./.eslintrc.json"
           }
         },
+        {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" }
+        ]
+      },
       {
         test: /\.(png|jpg|gif)$/i,
         loader: 'url-loader'

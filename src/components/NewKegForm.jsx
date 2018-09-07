@@ -1,6 +1,6 @@
 import React from 'react';
 
-function NewTicketForm(){
+function NewKegForm(){
   return (
     <div>
       <form>
@@ -21,4 +21,4 @@ function NewTicketForm(){
   );
 }
 
-export default NewTicketForm;
+export default NewKegForm;
