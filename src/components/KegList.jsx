@@ -1,5 +1,6 @@
 import React from 'react';
 import Keg from './Keg';
+import backgroundImage from '../../public/images/wavy-dots.png';
 
 var masterKegList = [
   {
@@ -33,9 +34,11 @@ var masterKegList = [
 ];
 
 function KegList(){
+  let testStyle = {
+    backgroundImage: `url(${backgroundImage})`
+  }
   return (
-    <div>
-      <hr/>
+    <div style={testStyle}>
       {masterKegList.map((keg, index) =>
         <Keg name={keg.name}
           brand={keg.brand}
