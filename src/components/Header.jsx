@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function Header(){
   return (
-    <h1>Help Queue</h1>
+    <h1>Kombucha Tap House</h1>
   );
 }
 
