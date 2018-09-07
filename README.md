@@ -14,7 +14,7 @@ _Stock levels and purchasing of different sizes of beers, including growlers wil
 
 ## Setup/Installation Requirements
 _Run NPM install after cloning project from github_
-_Run Webpack_dev-server and navigate in a web brower to the localhost listed_
+_Run Webpack_dev-server and navigate in a web browser to the localhost listed_
 
 
 
@@ -22,6 +22,8 @@ _Run Webpack_dev-server and navigate in a web brower to the localhost listed_
 _Css Objects is limiting when it comes to hover effects or last of type selectors. I implemented css modules as a work around for such issues._
 _Loading images was difficult but was able to implement url and file loader._
 _Wanted a background image. All inside divs dont fill screen when the content is not very tall. Used a css module on the app root but then couldnt load a loaded image. Used a remote version of the image for now._
+_Collect form data_
+_Decrement object value based on selling of growler.
 
 ## Known Bugs
 
