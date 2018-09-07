@@ -4,12 +4,29 @@ import image from '../../public/images/kombucha-logo.png';
 import './styles/Header.css'
 
 function Header(){
+  let headerDivStyles = {
+    textAlign: 'center',
+    background: 'black',
+    padding: '20px'
+  };
+  let logoStyles = {
+    width: '200px',
+    marginBottom: '20px'
+  };
+  let linkStyles = {
+    color:'black',
+    textDecoration: 'none',
+    marginRight: '10px',
+    padding: '10px',
+    background: '#ffca28',
+    borderRadius: '4px'
+  };
   return (
-    <div className="headerDivStyles">
-      <img className="logoStyles" src={image} alt="Kombuch on Tap Logo"/>
+    <div style={headerDivStyles}>
+      <img style={logoStyles} src={image} alt="Kombuch on Tap Logo"/>
       <div>
-        <Link className="linkStyles" to="/">Home</Link>
-        <Link className="linkStyles" to="/new-keg">Add New Keg</Link>
+        <Link style={linkStyles} to="/">Home</Link>
+        <Link style={linkStyles} to="/new-keg">Add New Keg</Link>
       </div>
     </div>
   );
