@@ -28,23 +28,24 @@ function EditKegForm(){
     <div style={headerDivStyles}>
       <form style={formStyles}>
         <h1>Edit an Existing Keg Form:</h1>
-          <input style={inputStyles}
-            type='text'
-            id='name'
-            placeholder='Name'/>
-          <input style={inputStyles}
-            type='text'
-            id='brand'
-            placeholder='Brand'/>
-          <input style={inputStyles}
-              type='text'
-              id='price'
-              placeholder='Price per Keg'/>
-          <input style={inputStyles}
-            type='text'
-            id='alcoholContent'
-            placeholder='Alcohol Content'/>
+        <input style={inputStyles}
+          type='text'
+          id='name'
+          placeholder='Name'/>
+        <input style={inputStyles}
+          type='text'
+          id='brand'
+          placeholder='Brand'/>
+        <input style={inputStyles}
+          type='text'
+          id='price'
+          placeholder='Price per Keg'/>
+        <input style={inputStyles}
+          type='text'
+          id='alcoholContent'
+          placeholder='Alcohol Content'/>
         <button className="submit-button" style={buttonStyle} type='submit'>Submit Changes</button>
+        <button className="delete-button" style={buttonStyle} type='submit'>Delete Keg from Inventory</button>
         <style jsx>{`
         .submit-button{
           margin-right: 10px;

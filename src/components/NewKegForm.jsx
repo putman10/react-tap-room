@@ -37,9 +37,9 @@ function NewKegForm(){
           id='brand'
           placeholder='Brand'/>
         <input style={inputStyles}
-            type='text'
-            id='price'
-            placeholder='Price per Keg'/>
+          type='text'
+          id='price'
+          placeholder='Price per Keg'/>
         <input style={inputStyles}
           type='text'
           id='alcoholContent'
