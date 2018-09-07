@@ -4,10 +4,19 @@ import KegList from './KegList';
 import { Switch, Route } from 'react-router-dom';
 import NewKegForm from './NewKegForm';
 import Error404 from './Error404';
+import backgroundImage from '../../public/images/wavy-dots.png';
 
 function App(){
+  let containerStyle = {
+    backgroundImage: `url(${backgroundImage})`
+  };
   return (
-    <div>
+    <div className="red-text" style={containerStyle}>
+      <style jsx>{`
+        .red-text {
+          color: red;
+        }
+    `}</style>
       <Header/>
       <Switch>
         <Route exact path='/' component={KegList} />
