@@ -41,25 +41,9 @@ module.exports = {
           configFile: "./.eslintrc.json"
           }
         },
-        {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {}
-          }
-        ]
-      },
       {
         test: /\.(png|jpg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192
-            }
-          }
-        ]
+        loader: 'url-loader'
       },
         {
         test: /\.jsx?$/,
