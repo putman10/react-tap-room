@@ -3,20 +3,33 @@ import Keg from './Keg';
 
 var masterKegList = [
   {
-    names: 'Thato and Haley',
-    location: '3A',
-    issue: 'Firebase won\'t save record. Halp.'
+    name: 'Dragon Fruit',
+    brand: 'Happy Mountain',
+    price: '5',
+    alcoholContent: '.05',
+    pintsLeft: '143'
   },
   {
-    names: 'Sleater and Kinney',
-    location: '4B',
-    issue: 'Fox image not displaying on page, can only see duck?'
+    name: 'Strawberry Melon',
+    brand: 'Happy Mountain',
+    price: '6',
+    alcoholContent: '.05',
+    pintsLeft: '121'
   },
   {
-    names: 'Imani & Jacob',
-    location: '9F',
-    issue: 'Donkey picture not displaying on hover in Zoology app. :('
-  }
+    name: 'Dragon Fruit',
+    brand: 'Stormy Lake',
+    price: '5',
+    alcoholContent: '.03',
+    pintsLeft: '53'
+  },
+  {
+    name: 'Dragon Fruit',
+    brand: 'Angry River',
+    price: '4',
+    alcoholContent: '.02',
+    pintsLeft: '89'
+  },
 ];
 
 function KegList(){
@@ -24,9 +37,11 @@ function KegList(){
     <div>
       <hr/>
       {masterKegList.map((keg, index) =>
-        <Keg names={keg.names}
-          location={keg.location}
-          issue={keg.issue}
+        <Keg name={keg.name}
+          brand={keg.brand}
+          price={keg.price}
+          alcoholContent={keg.alcoholContent}
+          pintsLeft={keg.pintsLeft}
           key={index}/>
       )}
     </div>
