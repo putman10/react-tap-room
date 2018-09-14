@@ -11,42 +11,44 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: [
-        {
+      masterKegList: {
+        '1' : {
           name: 'Dragon Fruit',
           brand: 'Happy Mountain',
           price: '5',
           alcoholContent: '.05',
           pintsLeft: '143'
         },
-        {
+        '2' : {
           name: 'Strawberry Melon',
           brand: 'Happy Mountain',
           price: '6',
           alcoholContent: '.05',
           pintsLeft: '121'
         },
-        {
+        '3' : {
           name: 'Dragon Fruit',
           brand: 'Stormy Lake',
-          price: '9',
+          price: '10',
           alcoholContent: '.03',
           pintsLeft: '53'
         },
-        {
+        '4' : {
           name: 'Dragon Fruit',
           brand: 'Angry River',
           price: '4',
           alcoholContent: '.02',
           pintsLeft: '89'
         }
-      ]
+      }
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
   }
 
   handleAddNewKeg(newKeg){
-    let newKegList = this.state.masterKegList;
+    let newKegList = Object.assign({}, this.state.masterKegList, {
+      [newKeg.id]: newKeg
+    });
     newKegList.push(newKeg);
     this.setState({masterKegList: newKegList});
   }

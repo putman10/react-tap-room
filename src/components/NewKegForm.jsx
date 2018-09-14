@@ -64,7 +64,7 @@ function NewKegForm(props){
         <input style={inputStyles}
           type='text'
           id='price'
-          placeholder='Price per Keg'
+          placeholder='Price per Pint'
           ref = {(input) =>{_price = input;}}/>
         <input style={inputStyles}
           type='text'
