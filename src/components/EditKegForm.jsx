@@ -45,15 +45,18 @@ function EditKegForm(){
           id='alcoholContent'
           placeholder='Alcohol Content'/>
         <button className="submit-button" style={buttonStyle} type='submit'>Submit Changes</button>
-        <button className="delete-button" style={buttonStyle} type='submit'>Delete Keg from Inventory</button>
+        <button className="submit-button" style={buttonStyle} type='submit'>Delete Keg from Inventory</button>
         <style jsx>{`
+        button {
+          display: inline-block;
+        }
         .submit-button{
+          display: inline-block;
           margin-right: 10px;
           padding: 10px;
           background: #ffca28;
           border-radius: 4px;
           max-width: 150px;
-          display: inline-block;
         }
         .submit-button:hover{
           background: black;
