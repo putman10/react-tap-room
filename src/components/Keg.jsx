@@ -25,12 +25,20 @@ function Keg(props){
     <p><b>Pints Left in Keg:</b> {props.pintsLeft}</p>
   </div>;
 
+  function handleEditKeg(id){
+    props.onEditKeg(id);
+  }
+
+  function handleDeleteKeg(id){
+    props.onDeleteKeg(id);
+  }
+
   if(props.currentRouterPath === '/admin'){
     return(
       <div style={headerDivStyles}>
         {kegInformation}
-        <button>Edit</button>
-        <button>Delete</button>
+        <button onClick={() =>handleEditKeg(props.id)}>Edit</button>
+        <button onClick={() =>handleDeleteKeg(props.id)}>Delete</button>
       </div>
     );
   } else {
@@ -47,9 +55,12 @@ Keg.propTypes = {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
+  id:PropTypes.string,
   alcoholContent: PropTypes.string.isRequired,
   pintsLeft: PropTypes.string.isRequired,
-  currentRouterPath: PropTypes.string
+  currentRouterPath: PropTypes.string,
+  onDeleteKeg: PropTypes.func,
+  onEditKeg: PropTypes.func
 };
 
 export default Keg;

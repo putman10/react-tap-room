@@ -41,6 +41,7 @@ class App extends React.Component {
           pintsLeft: '89'
         }
       }
+      test = "test";
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
   }
@@ -50,6 +51,16 @@ class App extends React.Component {
       [newKeg.id]: newKeg
     });
     this.setState({masterKegList: newKegList});
+  }
+
+  handleDeleteKeg(id){
+    console.log(id);
+    console.log(this.state.test);
+
+  }
+
+  handleEditKeg(id){
+    console.log(id);
   }
 
   render(){
@@ -65,7 +76,9 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
           <Route path='/new-keg' render={()=><NewKegControl onNewKegCreation={this.handleAddNewKeg} />}/>
-          <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}/>} />
+          <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}onDeleteKeg={this.handleDeleteKeg}
+          onEditKeg={this.handleEditKeg}
+          />} />
           <Route component={Error404} />
         </Switch>
       </div>

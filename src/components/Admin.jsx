@@ -12,6 +12,8 @@ function Admin(props){
       <KegList
         currentRouterPath={props.currentRouterPath}
         kegList={props.kegList}
+        onDeleteKeg={props.onDeleteKeg}
+        onEditKeg={props.onEditKeg}
         />
     </div>
   );
@@ -19,7 +21,9 @@ function Admin(props){
 
 Admin.propTypes = {
   kegList: PropTypes.object,
-  currentRouterPath: PropTypes.string.isRequired
+  currentRouterPath: PropTypes.string.isRequired,
+  onDeleteKeg: PropTypes.func,
+  onEditKeg: PropTypes.func
 };
 
 export default Admin;
