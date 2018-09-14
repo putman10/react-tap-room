@@ -60,6 +60,7 @@ function Admin(props){
           kegList={props.kegList}
           onDeleteKeg={props.onDeleteKeg}
           onEditKeg={props.onEditKeg}
+          onSellingKombucha={props.onSellingKombucha}
           />
       </div>
     );
@@ -72,7 +73,8 @@ Admin.propTypes = {
   onDeleteKeg: PropTypes.func,
   onEditKeg: PropTypes.func,
   selectedKeg: PropTypes.object,
-  onUpdateKeg: PropTypes.func
+  onUpdateKeg: PropTypes.func,
+  onSellingKombucha: PropTypes.func
 };
 
 export default Admin;

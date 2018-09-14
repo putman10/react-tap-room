@@ -82,6 +82,17 @@ class App extends React.Component {
     this.setState({kegForEditing: null});
   }
 
+  handleSellingKombucha(keg, size){
+  if(size == 'Pint'){
+    keg.pintsLeft -= 1;
+  } else if (size == 'Small Growler'){
+    keg.pintsLeft -= 5;
+  } else {
+    keg.pintsLeft -= 10;
+  }
+  console.log(keg);
+  }
+
   render(){
 
     return (
@@ -99,6 +110,7 @@ class App extends React.Component {
           onEditKeg={this.handleEditKeg}
           onUpdateKeg={this.handleUpdateKeg}
           selectedKeg={this.state.kegForEditing}
+          onSellingKombucha={this.handleSellingKombucha}
           />} />
           <Route component={Error404} />
         </Switch>

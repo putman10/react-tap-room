@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import PurchaseButtons from './PurchaseButtons'
 
 function Keg(props){
   let headerDivStyles = {
@@ -38,6 +39,10 @@ function Keg(props){
     return(
       <div style={headerDivStyles}>
         {kegInformation}
+        <PurchaseButtons
+          onSellingKombucha={props.onSellingKombucha}
+          keg={props.keg}
+          />
         <button className="submit-button" onClick={() =>handleEditKeg(props.kegId)}>Edit</button>
         <button className="delete-button" onClick={() =>handleDeleteKeg(props.kegId)}>Delete</button>
           <style jsx>{`
@@ -87,7 +92,9 @@ Keg.propTypes = {
   pintsLeft: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,
   onDeleteKeg: PropTypes.func,
-  onEditKeg: PropTypes.func
+  onEditKeg: PropTypes.func,
+  onSellingKombucha: PropTypes.func,
+  keg: PropTypes.object
 };
 
 export default Keg;

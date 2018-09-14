@@ -17,6 +17,8 @@ function KegList(props){
           currentRouterPath={props.currentRouterPath}
           onDeleteKeg={props.onDeleteKeg}
           onEditKeg={props.onEditKeg}
+          onSellingKombucha={props.onSellingKombucha}
+          keg={keg}
           />;
       })}
     </div>
@@ -27,7 +29,8 @@ KegList.propTypes = {
   kegList: PropTypes.object,
   currentRouterPath: PropTypes.string,
   onDeleteKeg: PropTypes.func,
-  onEditKeg: PropTypes.func
+  onEditKeg: PropTypes.func,
+  onSellingKombucha: PropTypes.func
 };
 
 export default KegList;
