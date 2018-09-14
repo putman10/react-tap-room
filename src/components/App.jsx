@@ -49,7 +49,6 @@ class App extends React.Component {
     let newKegList = Object.assign({}, this.state.masterKegList, {
       [newKeg.id]: newKeg
     });
-    newKegList.push(newKeg);
     this.setState({masterKegList: newKegList});
   }
 
