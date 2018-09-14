@@ -26,9 +26,6 @@ function Header(){
           <Link to="/" style={linkStyles}>Home</Link>
         </div>
         <div className="menu-links" >
-          <Link to="/new-keg" style={linkStyles}>Add New Keg</Link>
-        </div>
-        <div className="menu-links" >
           <Link to="/admin" style={linkStyles}>Admin</Link>
         </div>
         <style jsx>{`

@@ -9,6 +9,7 @@ function Admin(props){
   let containerStyle = {
     maxWidth: '1200px',
     margin: '0 auto',
+    padding: '10px',
     background: 'white',
     borderLeft: '1px solid black',
     borderRight: '1px solid black'
@@ -33,7 +34,27 @@ function Admin(props){
   } else{
     return (
       <div style={containerStyle}>
-        <Link to="/new-keg" style={linkStyles}>Add New Keg</Link>
+        <div className="menu-links">
+          <Link to="/new-keg" style={linkStyles}>Add New Keg</Link>
+        </div>
+        <style jsx>{`
+        .menu-links{
+          margin: 0 auto;
+          padding: 10px;
+          background: #ffca28;
+          border-radius: 4px;
+          width: 15%;
+          text-align: center;
+          border: 1px solid transparent;
+        }
+        .menu-links:hover{
+          background: white;
+          border: 1px solid black;
+        }
+        .menu-links:last-of-type{
+          margin-right: 0px;
+        }
+    `}</style>
         <KegList
           currentRouterPath={props.currentRouterPath}
           kegList={props.kegList}
