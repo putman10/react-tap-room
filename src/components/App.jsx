@@ -6,7 +6,7 @@ import NewKegForm from './NewKegForm';
 import EditKegForm from './EditKegForm';
 import Error404 from './Error404';
 
-function App(){
+class App extends React.Component {
   return (
     <div>
       <style jsx global>{`
