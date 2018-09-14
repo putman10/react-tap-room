@@ -1,6 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
-function NewKegForm(){
+function NewKegForm(props){
+  let _name = null;
+  let _brand = null;
+  let _price = null;
+  let _alcoholContent = null;
+
+  function handleAddNewKeg(event){
+    event.preventDefault();
+    props.onNewKegCreation({
+      name: _name.value,
+      brand: _brand.value,
+      price: _price.value,
+      alcoholContent: _alcoholContent.value,
+      pintsLeft: 168,
+      id: v4()
+    });
+    _name.value = '';
+    _brand.value = '';
+    _price.value = '';
+    _alcoholContent.value = '';
+  }
+
   let headerDivStyles = {
     width: '90%',
     maxWidth: '1200px',
@@ -26,24 +49,28 @@ function NewKegForm(){
   };
   return (
     <div style={headerDivStyles}>
-      <form style={formStyles}>
+      <form onSubmit={handleAddNewKeg} style={formStyles}>
         <h1>Add a New Keg Form:</h1>
         <input style={inputStyles}
           type='text'
           id='name'
-          placeholder='Name'/>
+          placeholder='Name'
+          ref = {(input) =>{_name = input;}}/>
         <input style={inputStyles}
           type='text'
           id='brand'
-          placeholder='Brand'/>
+          placeholder='Brand'
+          ref = {(input) =>{_brand = input;}}/>
         <input style={inputStyles}
           type='text'
           id='price'
-          placeholder='Price per Keg'/>
+          placeholder='Price per Keg'
+          ref = {(input) =>{_price = input;}}/>
         <input style={inputStyles}
           type='text'
           id='alcoholContent'
-          placeholder='Alcohol Content'/>
+          placeholder='Alcohol Content'
+          ref = {(input) =>{_alcoholContent = input;}}/>
         <button className="submit-button" style={buttonStyle} type='submit'>Add New Keg to Inventory</button>
         <style jsx>{`
         .submit-button{
@@ -63,5 +90,9 @@ function NewKegForm(){
     </div>
   );
 }
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
+};
 
 export default NewKegForm;

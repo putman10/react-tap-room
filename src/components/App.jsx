@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import KegList from './KegList';
 import { Switch, Route } from 'react-router-dom';
-import NewKegForm from './NewKegForm';
+import NewKegControl from './NewKegControl';
 import EditKegForm from './EditKegForm';
 import Error404 from './Error404';
 
@@ -42,6 +42,13 @@ class App extends React.Component {
         }
       ]
     };
+    this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
+  }
+
+  handleAddNewKeg(newKeg){
+    let newKegList = this.state.masterKegList;
+    newKegList.push(newKeg);
+    this.setState({masterKegList: newKegList});
   }
 
   render(){
@@ -55,8 +62,8 @@ class App extends React.Component {
         `}</style>
         <Header/>
         <Switch>
-          <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />}/>
-          <Route path='/new-keg' component={NewKegForm} />
+          <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
+          <Route path='/new-keg' render={()=><NewKegControl onNewKegCreation={this.handleAddNewKeg} />}/>
           <Route path='/edit-keg' component={EditKegForm} />
           <Route component={Error404} />
         </Switch>
