@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function EditKegForm(){
   let headerDivStyles = {
@@ -20,10 +21,8 @@ function EditKegForm(){
   let formStyles = {
     textAlign: 'center'
   };
-  let buttonStyle = {
-    display: 'block',
-    margin: '0 auto'
-  };
+
+
   return (
     <div style={headerDivStyles}>
       <form style={formStyles}>
@@ -44,19 +43,15 @@ function EditKegForm(){
           type='text'
           id='alcoholContent'
           placeholder='Alcohol Content'/>
-        <button className="submit-button" style={buttonStyle} type='submit'>Submit Changes</button>
-        <button className="submit-button" style={buttonStyle} type='submit'>Delete Keg from Inventory</button>
+        <button className="submit-button"  type='submit'>Submit Edits</button>
+        <button className="submit-button"  type='submit'>Delete Keg</button>
         <style jsx>{`
-        button {
-          display: inline-block;
-        }
         .submit-button{
           display: inline-block;
           margin-right: 10px;
           padding: 10px;
           background: #ffca28;
           border-radius: 4px;
-          max-width: 150px;
         }
         .submit-button:hover{
           background: black;
@@ -67,5 +62,9 @@ function EditKegForm(){
     </div>
   );
 }
+
+EditKegForm.propTypes = {
+  selectedKeg: PropTypes.object
+};
 
 export default EditKegForm;

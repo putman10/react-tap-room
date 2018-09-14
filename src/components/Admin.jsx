@@ -2,16 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import KegList from './KegList';
 import EditKegForm from './EditKegForm';
+import { Switch, Route } from 'react-router-dom';
 
 function Admin(props){
   let containerStyle = {
     maxWidth: '1200px',
     margin: '0 auto',
   };
-  console.log(props.selectedKeg);
 
   if (props.selectedKeg !== null) {
-    return <EditKegForm />
+    return (
+      <div>
+        <Switch>
+          <Route path='/edit-keg' render={()=><EditKegForm selectedKeg={this.props.selectedKeg} />} />
+          </Switch>
+      </div>
+      )
   } else{
     return (
       <div style={containerStyle}>
