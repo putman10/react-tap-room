@@ -12,14 +12,16 @@ function KegList(props){
           price={keg.price}
           alcoholContent={keg.alcoholContent}
           pintsLeft={keg.pintsLeft}
-          key={keg.id}/>;
+          key={keg.id}
+          currentRouterPath={props.currentRouterPath}/>;
       })}
     </div>
   );
 }
 
 KegList.propTypes = {
-  kegList: PropTypes.object
+  kegList: PropTypes.object,
+  currentRouterPath: PropTypes.string
 };
 
 export default KegList;

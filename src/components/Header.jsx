@@ -29,7 +29,7 @@ function Header(){
           <Link to="/new-keg" style={linkStyles}>Add New Keg</Link>
         </div>
         <div className="menu-links" >
-          <Link to="/edit-keg" style={linkStyles}>Edit Existing Keg</Link>
+          <Link to="/admin" style={linkStyles}>Admin</Link>
         </div>
         <style jsx>{`
         .menu-links{

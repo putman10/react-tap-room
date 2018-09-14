@@ -17,14 +17,30 @@ function Keg(props){
   let nameSpanStyle = {
     fontSize: '30px'
   };
-  return (
-    <div style={headerDivStyles}>
-      <h3 style={h3Style}><span style={nameSpanStyle}>{props.name}</span> - {props.brand}</h3>
-      <p><em>${props.price}</em></p>
-      <p><b>Alcohol Content:</b> {props.alcoholContent}%</p>
-      <p><b>Pints Left in Keg:</b> {props.pintsLeft}</p>
-    </div>
-  );
+  let kegInformation =
+  <div>
+    <h3 style={h3Style}><span style={nameSpanStyle}>{props.name}</span> - {props.brand}</h3>
+    <p><em>${props.price}</em></p>
+    <p><b>Alcohol Content:</b> {props.alcoholContent}%</p>
+    <p><b>Pints Left in Keg:</b> {props.pintsLeft}</p>
+  </div>;
+
+  if(props.currentRouterPath === '/admin'){
+    return(
+      <div style={headerDivStyles}>
+        {kegInformation}
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    );
+  } else {
+    return(
+      <div style={headerDivStyles}>
+        {kegInformation}
+      </div>
+
+    );
+  }
 }
 
 Keg.propTypes = {
@@ -33,6 +49,7 @@ Keg.propTypes = {
   price: PropTypes.string.isRequired,
   alcoholContent: PropTypes.string.isRequired,
   pintsLeft: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string
 };
 
 export default Keg;

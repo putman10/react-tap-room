@@ -3,7 +3,7 @@ import Header from './Header';
 import KegList from './KegList';
 import { Switch, Route } from 'react-router-dom';
 import NewKegControl from './NewKegControl';
-import EditKegForm from './EditKegForm';
+import Admin from './Admin';
 import Error404 from './Error404';
 
 class App extends React.Component {
@@ -65,7 +65,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
           <Route path='/new-keg' render={()=><NewKegControl onNewKegCreation={this.handleAddNewKeg} />}/>
-          <Route path='/edit-keg' component={EditKegForm} />
+          <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}/>} />
           <Route component={Error404} />
         </Switch>
       </div>
