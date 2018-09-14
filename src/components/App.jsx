@@ -91,6 +91,7 @@ class App extends React.Component {
     keg.pintsLeft -= 10;
   }
   console.log(keg);
+  console.log(size);
   }
 
   render(){
