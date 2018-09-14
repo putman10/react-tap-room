@@ -65,6 +65,7 @@ class App extends React.Component {
     let newKegList = this.state.masterKegList;
     delete newKegList[id];
     this.setState({masterKegList: newKegList});
+    this.setState({kegForEditing: null});
   }
 
   handleEditKeg(id){
@@ -85,7 +86,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
           <Route path='/new-keg' render={()=><NewKegControl onNewKegCreation={this.handleAddNewKeg} />}/>
-          <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname}onDeleteKeg={this.handleDeleteKeg}
+          <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} onDeleteKeg={this.handleDeleteKeg}
           onEditKeg={this.handleEditKeg}
           selectedKeg={this.state.kegForEditing}
           />} />

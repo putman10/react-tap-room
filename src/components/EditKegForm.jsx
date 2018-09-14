@@ -23,7 +23,11 @@ function EditKegForm(props){
   };
   let spanStyles = {
     color: 'red'
+  };
+  function handleDeleteKeg(id){
+    props.onDeleteKeg(id);
   }
+
 
   return (
     <div style={headerDivStyles}>
@@ -32,21 +36,20 @@ function EditKegForm(props){
         <input style={inputStyles}
           type='text'
           id='name'
-          value={props.selectedKeg.name}/>
+          defaultValue={props.selectedKeg.name}/>
         <input style={inputStyles}
           type='text'
           id='brand'
-          value={props.selectedKeg.brand}/>
+          defaultValue={props.selectedKeg.brand}/>
         <input style={inputStyles}
           type='text'
           id='price'
-          value={props.selectedKeg.price}/>
+          defaultValue={props.selectedKeg.price}/>
         <input style={inputStyles}
           type='text'
           id='alcoholContent'
-          value={props.selectedKeg.alcoholContent}/>
+          defaultValue={props.selectedKeg.alcoholContent}/>
         <button className="submit-button"  type='submit'>Submit Edits</button>
-        <button className="submit-button"  type='submit'>Delete Keg</button>
         <style jsx>{`
         .submit-button{
           display: inline-block;
@@ -61,12 +64,14 @@ function EditKegForm(props){
         }
     `}</style>
       </form>
+      <button onClick={() =>handleDeleteKeg(props.selectedKeg.id)} className="submit-button"  type='submit'>Delete Keg</button>
     </div>
   );
 }
 
 EditKegForm.propTypes = {
-  selectedKeg: PropTypes.object
+  selectedKeg: PropTypes.object,
+  onDeleteKeg: PropTypes.func
 };
 
 export default EditKegForm;
