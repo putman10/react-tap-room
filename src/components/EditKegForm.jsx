@@ -28,28 +28,54 @@ function EditKegForm(props){
     props.onDeleteKeg(id);
   }
 
+  let _name = null;
+  let _brand = null;
+  let _price = null;
+  let _alcoholContent = null;
+
+  function handleUpdatingKeg(selectedId){
+    props.onUpdateKeg({
+      name: _name.value,
+      brand: _brand.value,
+      id: selectedId,
+      price: _price.value,
+      alcoholContent: _alcoholContent.value,
+      pintsLeft: '168'
+    });
+    _name.value = '';
+    _brand.value = '';
+    _price.value = '';
+    _alcoholContent.value = '';
+  }
+
 
   return (
     <div style={headerDivStyles}>
-      <form style={formStyles}>
+      <form onSubmit={() =>handleUpdatingKeg(props.selectedKeg.id)} style={formStyles}>
         <h1>Edit <span style={spanStyles}>{props.selectedKeg.name}</span> Kombucha:</h1>
         <input style={inputStyles}
           type='text'
           id='name'
-          defaultValue={props.selectedKeg.name}/>
+          defaultValue={props.selectedKeg.name}
+          ref = {(input) =>{_name = input;}}/>
         <input style={inputStyles}
           type='text'
           id='brand'
-          defaultValue={props.selectedKeg.brand}/>
+          defaultValue={props.selectedKeg.brand}
+          ref = {(input) =>{_brand = input;}}/>
         <input style={inputStyles}
           type='text'
           id='price'
-          defaultValue={props.selectedKeg.price}/>
+          defaultValue={props.selectedKeg.price}
+          ref = {(input) =>{_price = input;}}/>
         <input style={inputStyles}
           type='text'
           id='alcoholContent'
-          defaultValue={props.selectedKeg.alcoholContent}/>
+          defaultValue={props.selectedKeg.alcoholContent}
+          ref = {(input) =>{_alcoholContent = input;}}/>
         <button className="submit-button"  type='submit'>Submit Edits</button>
+        <button onClick={() =>handleDeleteKeg(props.selectedKeg.id)} className="delete-button"  type='submit'>Delete Keg</button>
+      </form>
         <style jsx>{`
         .submit-button{
           display: inline-block;
@@ -57,21 +83,33 @@ function EditKegForm(props){
           padding: 10px;
           background: #ffca28;
           border-radius: 4px;
+          text-transform: uppercase;
+          font-weight:700;
         }
-        .submit-button:hover{
+        .delete-button{
+          display: inline-block;
+          margin-right: 10px;
+          padding: 10px;
+          background: red;
+          border-radius: 4px;
+          color:white;
+          text-transform: uppercase;
+          font-weight:700;
+        }
+        .submit-button:hover,
+        .delete-button:hover{
           background: black;
           color:white;
         }
     `}</style>
-      </form>
-      <button onClick={() =>handleDeleteKeg(props.selectedKeg.id)} className="submit-button"  type='submit'>Delete Keg</button>
     </div>
   );
 }
 
 EditKegForm.propTypes = {
   selectedKeg: PropTypes.object,
-  onDeleteKeg: PropTypes.func
+  onDeleteKeg: PropTypes.func,
+  onUpdateKeg: PropTypes.func
 };
 
 export default EditKegForm;

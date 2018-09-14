@@ -14,8 +14,10 @@ function Admin(props){
     return (
       <div>
         <Switch>
-          <Route path='/' render={()=><EditKegForm selectedKeg={props.selectedKeg}
-          onDeleteKeg={props.onDeleteKeg}/>} />
+          <Route path='/' render={()=><EditKegForm
+          selectedKeg={props.selectedKeg}
+          onDeleteKeg={props.onDeleteKeg}
+          onUpdateKeg={props.onUpdateKeg}/>} />
           </Switch>
       </div>
       )
@@ -38,7 +40,8 @@ Admin.propTypes = {
   currentRouterPath: PropTypes.string.isRequired,
   onDeleteKeg: PropTypes.func,
   onEditKeg: PropTypes.func,
-  selectedKeg: PropTypes.object
+  selectedKeg: PropTypes.object,
+  onUpdateKeg: PropTypes.func
 };
 
 export default Admin;
