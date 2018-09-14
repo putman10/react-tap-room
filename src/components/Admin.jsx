@@ -25,12 +25,12 @@ function Admin(props){
       <div>
         <Switch>
           <Route path='/' render={()=><EditKegForm
-          selectedKeg={props.selectedKeg}
-          onDeleteKeg={props.onDeleteKeg}
-          onUpdateKeg={props.onUpdateKeg}/>} />
-          </Switch>
+            selectedKeg={props.selectedKeg}
+            onDeleteKeg={props.onDeleteKeg}
+            onUpdateKeg={props.onUpdateKeg}/>} />
+        </Switch>
       </div>
-      )
+    );
   } else{
     return (
       <div style={containerStyle}>
@@ -61,7 +61,7 @@ function Admin(props){
           onDeleteKeg={props.onDeleteKeg}
           onEditKeg={props.onEditKeg}
           onSellingKombucha={props.onSellingKombucha}
-          />
+        />
       </div>
     );
   }

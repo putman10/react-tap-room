@@ -19,7 +19,7 @@ function KegList(props){
           onEditKeg={props.onEditKeg}
           onSellingKombucha={props.onSellingKombucha}
           keg={keg}
-          />;
+        />;
       })}
     </div>
   );

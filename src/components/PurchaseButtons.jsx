@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function PurchaseButtons(props){
   let purchaseStyle = {
     margin: '10px 0'
-  }
+  };
 
   function handleSellingKombucha(keg, size){
     props.onSellingKombucha(keg, size);
@@ -20,7 +20,8 @@ function PurchaseButtons(props){
         display: inline-block;
         margin-right: 10px;
         padding: 10px;
-        background: #ffca28;
+        background: #7f28ff;
+        color:white;
         border-radius: 4px;
         text-transform: uppercase;
         font-weight:700;

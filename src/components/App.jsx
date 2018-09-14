@@ -19,7 +19,7 @@ class App extends React.Component {
           id: '1',
           price: '5',
           alcoholContent: '.05',
-          pintsLeft: '143'
+          pintsLeft: 143
         },
         '2' : {
           name: 'Strawberry Melon',
@@ -27,7 +27,7 @@ class App extends React.Component {
           id: '2',
           price: '6',
           alcoholContent: '.05',
-          pintsLeft: '121'
+          pintsLeft: 121
         },
         '3' : {
           name: 'Dragon Fruit',
@@ -35,7 +35,7 @@ class App extends React.Component {
           id: '3',
           price: '10',
           alcoholContent: '.03',
-          pintsLeft: '53'
+          pintsLeft: 53
         },
         '4' : {
           name: 'Dragon Fruit',
@@ -43,7 +43,7 @@ class App extends React.Component {
           id: '4',
           price: '4',
           alcoholContent: '.02',
-          pintsLeft: '89'
+          pintsLeft: 89
         }
       },
       kegForEditing: null
@@ -52,6 +52,7 @@ class App extends React.Component {
     this.handleEditKeg = this.handleEditKeg.bind(this);
     this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
     this.handleUpdateKeg = this.handleUpdateKeg.bind(this);
+    this.handleSellingKombucha = this.handleSellingKombucha.bind(this);
   }
 
   handleAddNewKeg(newKeg){
@@ -83,15 +84,17 @@ class App extends React.Component {
   }
 
   handleSellingKombucha(keg, size){
-  if(size == 'Pint'){
-    keg.pintsLeft -= 1;
-  } else if (size == 'Small Growler'){
-    keg.pintsLeft -= 5;
-  } else {
-    keg.pintsLeft -= 10;
-  }
-  console.log(keg);
-  console.log(size);
+    if(size == 'Pint'){
+      keg.pintsLeft -= 1;
+    } else if (size == 'Small Growler'){
+      keg.pintsLeft -= 5;
+    } else {
+      keg.pintsLeft -= 10;
+    }
+    let updatedKeg = Object.assign({}, this.state.masterKegList, {
+      [keg.id]: keg
+    });
+    this.setState({masterKegList: updatedKeg});
   }
 
   render(){
@@ -108,10 +111,10 @@ class App extends React.Component {
           <Route exact path='/' render={()=><KegList kegList={this.state.masterKegList} />} />
           <Route path='/new-keg' render={()=><NewKegControl onNewKegCreation={this.handleAddNewKeg} />}/>
           <Route path='/admin' render={(props)=><Admin kegList={this.state.masterKegList} currentRouterPath={props.location.pathname} onDeleteKeg={this.handleDeleteKeg}
-          onEditKeg={this.handleEditKeg}
-          onUpdateKeg={this.handleUpdateKeg}
-          selectedKeg={this.state.kegForEditing}
-          onSellingKombucha={this.handleSellingKombucha}
+            onEditKeg={this.handleEditKeg}
+            onUpdateKeg={this.handleUpdateKeg}
+            selectedKeg={this.state.kegForEditing}
+            onSellingKombucha={this.handleSellingKombucha}
           />} />
           <Route component={Error404} />
         </Switch>

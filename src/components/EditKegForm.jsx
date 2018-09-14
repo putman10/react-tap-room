@@ -76,7 +76,7 @@ function EditKegForm(props){
         <button className="submit-button"  type='submit'>Submit Edits</button>
         <button onClick={() =>handleDeleteKeg(props.selectedKeg.id)} className="delete-button"  type='submit'>Delete Keg</button>
       </form>
-        <style jsx>{`
+      <style jsx>{`
         .submit-button{
           display: inline-block;
           margin-right: 10px;
