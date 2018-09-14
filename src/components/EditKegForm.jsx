@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function EditKegForm(){
+function EditKegForm(props){
   let headerDivStyles = {
     width: '90%',
     maxWidth: '1200px',
@@ -21,28 +21,30 @@ function EditKegForm(){
   let formStyles = {
     textAlign: 'center'
   };
-
+  let spanStyles = {
+    color: 'red'
+  }
 
   return (
     <div style={headerDivStyles}>
       <form style={formStyles}>
-        <h1>Edit an Existing Keg Form:</h1>
+        <h1>Edit <span style={spanStyles}>{props.selectedKeg.name}</span> Kombucha:</h1>
         <input style={inputStyles}
           type='text'
           id='name'
-          placeholder='Name'/>
+          value={props.selectedKeg.name}/>
         <input style={inputStyles}
           type='text'
           id='brand'
-          placeholder='Brand'/>
+          value={props.selectedKeg.brand}/>
         <input style={inputStyles}
           type='text'
           id='price'
-          placeholder='Price per Keg'/>
+          value={props.selectedKeg.price}/>
         <input style={inputStyles}
           type='text'
           id='alcoholContent'
-          placeholder='Alcohol Content'/>
+          value={props.selectedKeg.alcoholContent}/>
         <button className="submit-button"  type='submit'>Submit Edits</button>
         <button className="submit-button"  type='submit'>Delete Keg</button>
         <style jsx>{`

@@ -14,7 +14,7 @@ function Admin(props){
     return (
       <div>
         <Switch>
-          <Route path='/edit-keg' render={()=><EditKegForm selectedKeg={this.props.selectedKeg} />} />
+          <Route path='/' render={()=><EditKegForm selectedKeg={props.selectedKeg} />} />
           </Switch>
       </div>
       )
