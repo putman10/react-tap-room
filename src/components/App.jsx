@@ -5,6 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import NewKegControl from './NewKegControl';
 import Admin from './Admin';
 import Error404 from './Error404';
+import { v4 } from 'uuid';
 
 class App extends React.Component {
 
@@ -53,8 +54,9 @@ class App extends React.Component {
   }
 
   handleAddNewKeg(newKeg){
+    var newKegId = v4();
     let newKegList = Object.assign({}, this.state.masterKegList, {
-      [newKeg.id]: newKeg
+      [newKegId]: newKeg
     });
     this.setState({masterKegList: newKegList});
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
 
 function NewKegForm(props){
   let _name = null;
@@ -15,8 +14,7 @@ function NewKegForm(props){
       brand: _brand.value,
       price: _price.value,
       alcoholContent: _alcoholContent.value,
-      pintsLeft: '168',
-      id: v4()
+      pintsLeft: '168'
     });
     _name.value = '';
     _brand.value = '';

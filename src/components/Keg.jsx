@@ -37,8 +37,8 @@ function Keg(props){
     return(
       <div style={headerDivStyles}>
         {kegInformation}
-        <button onClick={() =>handleEditKeg(props.id)}>Edit</button>
-        <button onClick={() =>handleDeleteKeg(props.id)}>Delete</button>
+        <button onClick={() =>handleEditKeg(props.kegId)}>Edit</button>
+        <button onClick={() =>handleDeleteKeg(props.kegId)}>Delete</button>
       </div>
     );
   } else {
@@ -55,7 +55,7 @@ Keg.propTypes = {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  id:PropTypes.string,
+  kegId:PropTypes.string,
   alcoholContent: PropTypes.string.isRequired,
   pintsLeft: PropTypes.string.isRequired,
   currentRouterPath: PropTypes.string,

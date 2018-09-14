@@ -12,8 +12,8 @@ function KegList(props){
           price={keg.price}
           alcoholContent={keg.alcoholContent}
           pintsLeft={keg.pintsLeft}
-          key={keg.id}
-          id={keg.id}
+          key={kegId}
+          kegId={kegId}
           currentRouterPath={props.currentRouterPath}
           onDeleteKeg={props.onDeleteKeg}
           onEditKeg={props.onEditKeg}
