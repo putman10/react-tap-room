@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 
 function Keg(props){
   let headerDivStyles = {
-    width: '90%',
     maxWidth: '1200px',
     margin: '0 auto',
     background: 'white',
     padding: '10px',
     border: '1px solid black',
-    borderTop: '0'
+    borderTop: '0',
+    borderLeft: '0',
+    borderRight: '0'
   };
   let h3Style = {
     marginTop: '0px',
