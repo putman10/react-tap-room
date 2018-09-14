@@ -15,6 +15,7 @@ class App extends React.Component {
         '1' : {
           name: 'Dragon Fruit',
           brand: 'Happy Mountain',
+          id: '1',
           price: '5',
           alcoholContent: '.05',
           pintsLeft: '143'
@@ -22,6 +23,7 @@ class App extends React.Component {
         '2' : {
           name: 'Strawberry Melon',
           brand: 'Happy Mountain',
+          id: '2',
           price: '6',
           alcoholContent: '.05',
           pintsLeft: '121'
@@ -29,6 +31,7 @@ class App extends React.Component {
         '3' : {
           name: 'Dragon Fruit',
           brand: 'Stormy Lake',
+          id: '3',
           price: '10',
           alcoholContent: '.03',
           pintsLeft: '53'
@@ -36,14 +39,17 @@ class App extends React.Component {
         '4' : {
           name: 'Dragon Fruit',
           brand: 'Angry River',
+          id: '4',
           price: '4',
           alcoholContent: '.02',
           pintsLeft: '89'
         }
-      }
-      test = "test";
+      },
+      test: 'test'
     };
     this.handleAddNewKeg = this.handleAddNewKeg.bind(this);
+    this.handleEditKeg = this.handleEditKeg.bind(this);
+    this.handleDeleteKeg = this.handleDeleteKeg.bind(this);
   }
 
   handleAddNewKeg(newKeg){
@@ -54,9 +60,11 @@ class App extends React.Component {
   }
 
   handleDeleteKeg(id){
-    console.log(id);
+    console.log(this.state.masterKegList);
     console.log(this.state.test);
-
+    let newKegList = this.state.masterKegList;
+    delete newKegList[id];
+    this.setState({masterKegList: newKegList});
   }
 
   handleEditKeg(id){
