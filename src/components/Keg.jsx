@@ -37,8 +37,34 @@ function Keg(props){
     return(
       <div style={headerDivStyles}>
         {kegInformation}
-        <button onClick={() =>handleEditKeg(props.kegId)}>Edit</button>
-        <button onClick={() =>handleDeleteKeg(props.kegId)}>Delete</button>
+        <button className="submit-button" onClick={() =>handleEditKeg(props.kegId)}>Edit</button>
+        <button className="delete-button" onClick={() =>handleDeleteKeg(props.kegId)}>Delete</button>
+          <style jsx>{`
+          .submit-button{
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px;
+            background: #ffca28;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight:700;
+          }
+          .delete-button{
+            display: inline-block;
+            margin-right: 10px;
+            padding: 10px;
+            background: #c50404;
+            border-radius: 4px;
+            color:white;
+            text-transform: uppercase;
+            font-weight:700;
+          }
+          .submit-button:hover,
+          .delete-button:hover{
+            background: black;
+            color:white;
+          }
+      `}</style>
       </div>
     );
   } else {

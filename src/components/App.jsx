@@ -80,8 +80,6 @@ class App extends React.Component {
     });
     this.setState({masterKegList: newKegList});
     this.setState({kegForEditing: null});
-    console.log(this.state.masterKegList);
-    console.log(editedKeg);
   }
 
   render(){

@@ -90,7 +90,7 @@ function EditKegForm(props){
           display: inline-block;
           margin-right: 10px;
           padding: 10px;
-          background: red;
+          background: #c50404;
           border-radius: 4px;
           color:white;
           text-transform: uppercase;

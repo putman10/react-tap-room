@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 
 function NewKegConfirmation(props){
   let div = {
-    paddingTop: '125px',
+    paddingTop: '20px',
     textAlign: 'center',
-    height: '100%'
+    height: '100%',
+    background: '#ffffffd4',
+    margin: '0 auto',
+    maxWidth: '1200px'
   };
   return(
     <div style={div}>
